@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'screens/dashboardScreen.dart';
 
 void main() {
-  runApp(FinanceApp());
+  runApp(const FinanceApp());
 }
 
 class FinanceApp extends StatelessWidget {
+  const FinanceApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,7 +18,7 @@ class FinanceApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.grey[200],
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: DashboardScreen(),
+      home: const DashboardScreen(),
     );
   }
 }

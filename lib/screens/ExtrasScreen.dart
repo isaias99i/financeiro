@@ -2,6 +2,8 @@ import 'package:financeiro/widgets/TableCellWidget.dart';
 import 'package:flutter/material.dart';
 
 class ExtrasScreen extends StatelessWidget {
+  const ExtrasScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     //Dados Coluna principal
@@ -32,7 +34,7 @@ class ExtrasScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Extras'),
+        title: const Text('Extras'),
       ),
       body: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -47,14 +49,14 @@ class ExtrasScreen extends StatelessWidget {
                     final header = entry.value;
                     return Container(
                       width: parentSpans[index] * 120,
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
                         color: Colors.blue,
                         border: Border.all(color: Colors.black),
                       ),
                       child: Text(
                         header,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
@@ -87,7 +89,7 @@ class ExtrasScreen extends StatelessWidget {
                         )
                     ],
                   );
-                }).toList(),
+                }),
               ],
             ),
           )),

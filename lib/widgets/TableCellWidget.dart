@@ -8,7 +8,7 @@ class TableCellWidget extends StatelessWidget {
   final Color textColor;
   final VoidCallback? onTap; //Funçaõ chamada ao clicar na célula
 
-  const TableCellWidget({
+  const TableCellWidget({super.key, 
     required this.content,
     required this.width,
     this.height = 40,
@@ -24,7 +24,7 @@ class TableCellWidget extends StatelessWidget {
       child: Container(
         width: width,
         height: height,
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
           color: isHeader ? Colors.grey[300] : Colors.white,
           border: Border.all(color: Colors.grey),

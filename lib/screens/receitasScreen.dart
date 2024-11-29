@@ -3,6 +3,8 @@ import 'package:financeiro/widgets/TableCellWidget.dart';
 import 'package:flutter/material.dart';
 
 class ReceitasScreen extends StatelessWidget {
+  const ReceitasScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     //Dados da tabela
@@ -36,7 +38,7 @@ class ReceitasScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Receitas'),
+        title: const Text('Receitas'),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -54,7 +56,7 @@ class ReceitasScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ExtrasScreen(),
+                            builder: (context) => const ExtrasScreen(),
                           ),
                         );
                       }
@@ -62,14 +64,14 @@ class ReceitasScreen extends StatelessWidget {
                     },
                     child: Container(
                       width: parentSpans[index] * 100,
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
                         color: Colors.lightBlue,
                         border: Border.all(color: Colors.black),
                       ),
                       child: Text(
                         header,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
@@ -95,7 +97,7 @@ class ReceitasScreen extends StatelessWidget {
                       ),
                   ],
                 );
-              }).toList(),
+              }),
             ],
           ),
         ),

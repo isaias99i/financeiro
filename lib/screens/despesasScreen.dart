@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:financeiro/widgets/TableCellWidget.dart';
 
 class DespesasScreen extends StatelessWidget {
+  const DespesasScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     // Dados da tabela
@@ -127,7 +129,7 @@ class DespesasScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Despesas'),
+        title: const Text('Despesas'),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -142,14 +144,14 @@ class DespesasScreen extends StatelessWidget {
                   final header = entry.value;
                   return Container(
                     width: parentSpans[index] * 150,
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     decoration: BoxDecoration(
                       color: Colors.grey[300],
                       border: Border.all(color: Colors.grey),
                     ),
                     child: Text(
                       header,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -184,7 +186,7 @@ class DespesasScreen extends StatelessWidget {
                       ),
                   ],
                 );
-              }).toList(),
+              }),
             ],
           ),
         ),

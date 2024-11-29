@@ -7,7 +7,7 @@ class FinanceCard extends StatelessWidget {
   final Color color;
   final VoidCallback onTap;
 
-  const FinanceCard({
+  const FinanceCard({super.key, 
     required this.title,
     required this.value,
     required this.color,
@@ -38,9 +38,9 @@ class FinanceCard extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               value,
               style: TextStyle(

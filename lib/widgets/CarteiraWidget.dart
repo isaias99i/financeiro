@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CarteiraWidget extends StatefulWidget {
+  const CarteiraWidget({super.key});
+
   @override
   _CarteiraWidgetState createState() => _CarteiraWidgetState();
 }
@@ -30,7 +32,7 @@ class _CarteiraWidgetState extends State<CarteiraWidget> {
             ExpansionPanel(
               isExpanded: _isExpanded,
               headerBuilder: (BuildContext context, bool isExpanded) {
-                return ListTile(
+                return const ListTile(
                   title: Text(
                     'Bancos',
                     style: TextStyle(fontWeight: FontWeight.bold),

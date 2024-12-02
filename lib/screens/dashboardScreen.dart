@@ -1,8 +1,5 @@
 import 'package:financeiro/widgets/ResumoFinanceiroWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:financeiro/widgets/Cards.dart';
-import 'receitasScreen.dart';
-import 'despesasScreen.dart';
 import 'package:financeiro/widgets/CarteiraWidget.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -30,7 +27,7 @@ class DashboardScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ResumoFinanceiroWidget(receitas: receitas, despesas: despesas, saldoMensal: saldoMensal, saldoAposReserva: saldoAposReserva,saldoAtual: 0, segurancaAno: despesas * 12,),
-            CarteiraWidget(),
+            const CarteiraWidget(),
             /*const Text(
               'Carteira',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),

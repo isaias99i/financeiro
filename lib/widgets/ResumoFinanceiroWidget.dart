@@ -17,9 +17,10 @@ class ResumoFinanceiroWidget extends StatefulWidget {
     required this.saldoAposReserva,
     required this.saldoAtual,
     required this.segurancaAno,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
+  @override
   _ResumoFinanceiroWidgetState createState() => _ResumoFinanceiroWidgetState();
 }
 
@@ -99,8 +100,8 @@ class _ResumoFinanceiroWidgetState extends State<ResumoFinanceiroWidget> {
         ExpansionPanel(
           isExpanded: _isExpanded,
           headerBuilder: (BuildContext context, bool isExpanded) {
-            return ListTile(
-              title: const Text(
+            return const ListTile(
+              title: Text(
                 'Resumo Financeiro',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
@@ -130,7 +131,7 @@ class _ResumoFinanceiroWidgetState extends State<ResumoFinanceiroWidget> {
                             child: Align(
                               alignment: Alignment.topRight,
                               child: IconButton(
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.close,
                                   color: Colors.red,
                                 ),
@@ -154,7 +155,7 @@ class _ResumoFinanceiroWidgetState extends State<ResumoFinanceiroWidget> {
                       child: Center(
                         child: IconButton(
                           onPressed: _showAddMenuDialog,
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.add_circle,
                             size: 40,
                             color: Colors.blue,
@@ -180,17 +181,17 @@ class _ResumoFinanceiroWidgetState extends State<ResumoFinanceiroWidget> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Adicionar novo menu'),
+          title: const Text('Adicionar novo menu'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
                 controller: titleController,
-                decoration: InputDecoration(labelText: 'Título'),
+                decoration: const InputDecoration(labelText: 'Título'),
               ),
               TextField(
                 controller: valueController,
-                decoration: InputDecoration(labelText: 'Valor'),
+                decoration: const InputDecoration(labelText: 'Valor'),
               ),
             ],
           ),
@@ -199,7 +200,7 @@ class _ResumoFinanceiroWidgetState extends State<ResumoFinanceiroWidget> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Cancelar'),
+              child: const Text('Cancelar'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -212,7 +213,7 @@ class _ResumoFinanceiroWidgetState extends State<ResumoFinanceiroWidget> {
                 });
                 Navigator.of(context).pop();
               },
-              child: Text('Adicionar'),
+              child: const Text('Adicionar'),
             ),
           ],
         );
@@ -246,8 +247,8 @@ class FinanceCard extends StatelessWidget {
     required this.value,
     required this.color,
     this.onTap,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -255,7 +256,7 @@ class FinanceCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: 150,
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(8),
@@ -265,12 +266,12 @@ class FinanceCard extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyle(fontSize: 16, color: Colors.white),
+              style: const TextStyle(fontSize: 16, color: Colors.white),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               value,
-              style: TextStyle(fontSize: 14, color: Colors.white),
+              style: const TextStyle(fontSize: 14, color: Colors.white),
             ),
           ],
         ),

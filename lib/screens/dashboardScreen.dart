@@ -1,12 +1,14 @@
+import 'package:financeiro/widgets/ResumoFinanceiroWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:financeiro/widgets/Cards.dart';
 import 'receitasScreen.dart';
 import 'despesasScreen.dart';
+import 'package:financeiro/widgets/CarteiraWidget.dart';
 
 class DashboardScreen extends StatelessWidget {
-  final double receitas = 2510.00; // Exemplo de receita
-  final double despesas = -1066.86; // Exemplo de despesa (negativo)
-  final double reserva = 1000.00;
+  final double receitas = 0.00; // Exemplo de receita
+  final double despesas = 0.0; // Exemplo de despesa (negativo)
+  final double reserva = 0.00;
 
   const DashboardScreen({super.key}); // Valor fixo da reserva anual para cálculo
 
@@ -27,72 +29,9 @@ class DashboardScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Resumo Financeiro',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 16),
-            // Organizar os elementos lado a lado
-            Wrap(
-              spacing: 16, // Espaçamento horizontal entre os itens
-              runSpacing: 16, // Espaçamento vertical entre as linhas
-              children: [
-                FinanceCard(
-                  title: 'Receitas',
-                  value: 'R\$ ${receitas.toStringAsFixed(2)}',
-                  color: Colors.green,
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const ReceitasScreen()),
-                    );
-                  },
-                ),
-                FinanceCard(
-                  title: 'Despesas',
-                  value: 'R\$ ${despesas.toStringAsFixed(2)}',
-                  color: Colors.red,
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const DespesasScreen()),
-                    );
-                  },
-                ),
-                FinanceCard(
-                  title: 'Saldo Mensal',
-                  value: 'R\$ ${saldoMensal.toStringAsFixed(2)}',
-                  color: saldoMensal >= 0 ? Colors.blue : Colors.orange,
-                  onTap: () {},
-                ),
-                FinanceCard(
-                  title: 'Segurança Ano',
-                  value: 'R\$ ${despesas*12}', // Exemplo fixo
-                  color: Colors.purple,
-                  onTap: () {},
-                ),
-                FinanceCard(
-                  title: '% Completo',
-                  value: '65%', // Exemplo de progresso
-                  color: Colors.indigo,
-                  onTap: () {},
-                ),
-                FinanceCard(
-                  title: 'Atual',
-                  value: 'R\$ 5.000,00', // Exemplo fixo
-                  color: Colors.teal,
-                  onTap: () {},
-                ),
-                FinanceCard(
-                  title: 'Saldo após Reserva',
-                  value: 'R\$ ${saldoAposReserva.toStringAsFixed(2)}',
-                  color: saldoAposReserva >= 0 ? Colors.green : Colors.red,
-                  onTap: () {},
-                ),
-              ],
-            ),
-            const SizedBox(height: 24),
-            const Text(
+            ResumoFinanceiroWidget(receitas: receitas, despesas: despesas, saldoMensal: saldoMensal, saldoAposReserva: saldoAposReserva,saldoAtual: 0, segurancaAno: despesas * 12,),
+            CarteiraWidget(),
+            /*const Text(
               'Carteira',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
@@ -111,7 +50,7 @@ class DashboardScreen extends StatelessWidget {
                   ),
                 );
               }).toList(),
-            ),
+            ),*/
           ],
         ),
       ),

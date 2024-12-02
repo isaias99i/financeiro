@@ -1,8 +1,5 @@
 import 'package:financeiro/widgets/ResumoFinanceiroWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:financeiro/widgets/Cards.dart';
-import 'receitasScreen.dart';
-import 'despesasScreen.dart';
 import 'package:financeiro/widgets/CarteiraWidget.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -16,9 +13,6 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final double saldoMensal = receitas + despesas; // Cálculo do saldo mensal
     final double saldoAposReserva = saldoMensal - reserva; // Cálculo do saldo após reserva
-
-    // Lista inicial de bancos na carteira
-    final List<String> bancos = ['Banco Inter', 'Santander', 'Itaú', 'Físico'];
 
     return Scaffold(
       appBar: AppBar(

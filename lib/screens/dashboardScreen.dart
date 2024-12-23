@@ -14,9 +14,6 @@ class DashboardScreen extends StatelessWidget {
     final double saldoMensal = receitas + despesas; // Cálculo do saldo mensal
     final double saldoAposReserva = saldoMensal - reserva; // Cálculo do saldo após reserva
 
-    // Lista inicial de bancos na carteira
-    final List<String> bancos = ['Banco Inter', 'Santander', 'Itaú', 'Físico'];
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Dashboard'),
